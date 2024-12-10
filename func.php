@@ -12,6 +12,16 @@
                     document.location.href = 'data-alternatif.php';
                     </script>";
             }
+        }else if($_GET['hapus'] == 'vendor'){
+            $id = $_GET['id'];
+            $query = "DELETE FROM jenis WHERE id_jenis=$id";
+            $result = mysqli_query($conn,$query);
+            if($result){
+                echo "<script>
+                    alert('Data Jenis Vendor Berhasil Dihapus');
+                    document.location.href = 'data-vendor.php';
+                    </script>";
+            }
         }else if($_GET['hapus'] == 'kriteria'){
             $id = $_GET['id'];
             $query = "DELETE FROM kriteria WHERE id_kriteria=$id";

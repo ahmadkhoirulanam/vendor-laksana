@@ -61,9 +61,9 @@ $dataAlternatif = mysqli_query($conn, "SELECT * FROM jenis");
                         $jmlAlternatifa = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM alternatif where id_jenis= $id_vendor")) ?>
                         <td align="center"><span class="badge bg-success" style="width: 100px; text-align: center;"><?php echo $jmlAlternatifa?></span></td>
                         <td>
-                        <a href="data-alternatif.php?id=<?= $d['id_jenis'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat Data Supplier</a>
+                          <a href="data-alternatif.php?id=<?= $d['id_jenis'] ?>" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Lihat Data Supplier</a>
                           <a href="?m=edit&id=<?= $d['id_jenis'] ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> Edit</a>
-                          <a href="?hapus=alternatif&id=<?= $d['id_jenis'] ?>" onclick="return confirm('Hapus Data Alternatif?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</a>
+                          <a href="?hapus=vendor&id=<?= $d['id_jenis'] ?>" onclick="return confirm('Hapus Data Jenis Vendor?')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</a>
                         </td>
                       </tr>
                     <?php endwhile ?>
