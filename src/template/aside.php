@@ -11,9 +11,10 @@
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-     
+
       <div class="info">
-        <a href="#" class="d-block">Administrator</a>
+      <a href="#" class="d-block"><?php echo ucwords($_SESSION['username']); ?></a>
+
       </div>
     </div>
 
@@ -31,64 +32,81 @@
           </a>
         </li>
         <li class="nav-header">FITUR</li>
-        <li class="nav-item">
-          <a href="data-vendor.php" class="nav-link <?php if ($title == 'Data Vendor') echo 'active'; ?>">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Jenis Vendor
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="data-alternatif.php" class="nav-link <?php if ($title == 'Data Alternatif') echo 'active'; ?>">
-            <i class="nav-icon fas fa-user"></i>
-            <p>
-              Supplier
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="nilai-alternatif.php" class="nav-link <?php if ($title == 'Nilai Alternatif') echo 'active'; ?>">
-            <i class="nav-icon fas fa-money-bill"></i>
-            <p>
-              NIlai VMS
-            </p>
-          </a>
-        </li>
 
-        <li class="nav-item">
-          <a href="data-kriteria.php" class="nav-link <?php if ($title == 'Data Kriteria') echo 'active'; ?>">
-            <i class="nav-icon fas fa-th"></i>
-            <p>
-              Kriteria
-            </p>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="sub-kriteria.php" class="nav-link <?php if ($title == 'Sub Kriteria') echo 'active'; ?>">
-            <i class="nav-icon fas fa-plus"></i>
-            <p>
-              Sub-Kriteria
-            </p>
-          </a>
-        </li>
 
-        <li class="nav-item">
-          <a href="perhitungan.php" onclick="<?php ranking() ?>" class="nav-link <?php if ($title == 'Perhitungan') echo 'active'; ?>">
-            <i class="nav-icon fas fa-calculator"></i>
-            <p>
-              Hasil Perhitungan
-            </p>
-          </a>
-        </li>
-        <!-- <li class="nav-item">
-          <a href="laporan.php" class="nav-link <?php if ($title == 'laporan') echo 'active'; ?>">
-            <i class="nav-icon fas fa-chart-pie"></i>
-            <p>
-              Laporan
-            </p>
-          </a>
-        </li> -->
+        <?php if ($_SESSION['username'] == 'admin') : ?>
+
+          <li class="nav-item">
+            <a href="data-vendor.php" class="nav-link <?php if ($title == 'Data Vendor') echo 'active'; ?>">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Jenis Vendor
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="data-alternatif.php" class="nav-link <?php if ($title == 'Data Alternatif') echo 'active'; ?>">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Supplier
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
+            <a href="data-kriteria.php" class="nav-link <?php if ($title == 'Data Kriteria') echo 'active'; ?>">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Kriteria
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="sub-kriteria.php" class="nav-link <?php if ($title == 'Sub Kriteria') echo 'active'; ?>">
+              <i class="nav-icon fas fa-plus"></i>
+              <p>
+                Sub-Kriteria
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="perhitungan.php" onclick="<?php ranking() ?>" class="nav-link <?php if ($title == 'Perhitungan') echo 'active'; ?>">
+              <i class="nav-icon fas fa-calculator"></i>
+              <p>
+                Hasil Perhitungan
+              </p>
+            </a>
+          </li>
+        <?php endif; ?>
+
+        <?php if ($_SESSION['username'] == 'manager') : ?>
+
+          <li class="nav-item">
+            <a href="nilai-alternatif.php" class="nav-link <?php if ($title == 'Nilai Alternatif') echo 'active'; ?>">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p>
+                NIlai VMS
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="perhitungan.php" onclick="<?php ranking() ?>" class="nav-link <?php if ($title == 'Perhitungan') echo 'active'; ?>">
+              <i class="nav-icon fas fa-calculator"></i>
+              <p>
+                Hasil Perhitungan
+              </p>
+            </a>
+          </li>
+
+          
+        <?php endif; ?>
+
+        
+
+
+
         <li class="nav-item">
           <a href="logout.php" class="nav-link">
             <i class="nav-icon fas fa-sign-out-alt"></i>

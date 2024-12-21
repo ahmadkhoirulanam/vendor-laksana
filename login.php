@@ -14,6 +14,7 @@ if(isset($_POST['login'])){
   if($cek){  
       $_SESSION['login'] = 'login';
       $_SESSION['user'] = $cek['username'];
+      $_SESSION['username'] = $user;
       echo "<script>
         alert('Login Success');
         document.location.href='index.php';
